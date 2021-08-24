@@ -5,22 +5,107 @@ class Cart extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
         debugShowCheckedModeBanner: false,
+        theme: ThemeData(primarySwatch: Colors.brown, backgroundColor: Colors.black, brightness: Brightness.dark),
         home: Scaffold(
           body: SingleChildScrollView(
             child: Column(
               children: [
                 Center(
                   child: Padding(
-                    padding: const EdgeInsets.all(8.0),
+                    padding: const EdgeInsets.all(16.0),
                     child: Text(
-                      'This is Cart',
+                      'Your Cart',
                       textAlign: TextAlign.center,
                       style: TextStyle(
-                        fontSize: 20,
+                        fontSize: 25,
+                        fontWeight: FontWeight.bold,
                       ),
                     ),
                   ),
                 ),
+               Card(
+                 child: Container(
+                   height: 50,
+                   child: Row(
+                   mainAxisAlignment: MainAxisAlignment.spaceAround,
+                   children: [
+                     Text(
+                       'Latte'
+                     ),
+                     Text(
+                       '\$5.00'
+                    ),
+                   ],
+                 ),
+                 ),
+               ),
+                  Card(
+                 child: Container(
+                   height: 50,
+                   child: Row(
+                   mainAxisAlignment: MainAxisAlignment.spaceAround,
+                   children: [
+                     Text(
+                       'Mocha'
+                     ),
+                     Text(
+                       '\$5.00'
+                    ),
+                   ],
+                 ),
+                 ),
+               ),
+                  Card(
+                 child: Container(
+                   height: 50,
+                   child: Row(
+                   mainAxisAlignment: MainAxisAlignment.spaceAround,
+                   children: [
+                     Text(
+                       'Irish'
+                     ),
+                     Text(
+                       '\$5.00'
+                    ),
+                   ],
+                 ),
+                 ),
+               ),
+                  Card(
+                 child: Container(
+                   height: 50,
+                   child: Row(
+                   mainAxisAlignment: MainAxisAlignment.spaceAround,
+                   children: [
+                     Text(
+                       'Frappe'
+                     ),
+                     Text(
+                       '\$5.00'
+                    ),
+                   ],
+                 ),
+                 ),
+               ),
+                  Card(
+                  
+                 child: Container(
+                   height: 50,
+                   child: Row(
+                   mainAxisAlignment: MainAxisAlignment.spaceAround,
+                   children: [
+                     Text(
+                       'TOTAL',
+                       style: TextStyle(fontWeight: FontWeight.bold),
+                     ),
+                     Text(
+                       '\$20.00',
+                        style: TextStyle(fontWeight: FontWeight.bold),
+                    ),
+                   ],
+                 ),
+                 ),
+               ),
               ],
             ),
           ),

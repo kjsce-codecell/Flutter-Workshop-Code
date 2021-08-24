@@ -4,7 +4,10 @@ class Home extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      theme: ThemeData(primarySwatch: Colors.brown, backgroundColor: Colors.black, brightness: Brightness.dark),
+      theme: ThemeData(
+          primarySwatch: Colors.brown,
+          backgroundColor: Colors.black,
+          brightness: Brightness.dark),
       debugShowCheckedModeBanner: false,
       home: Scaffold(
         body: SingleChildScrollView(
@@ -53,7 +56,6 @@ class Home extends StatelessWidget {
                           Radius.circular(10),
                         ),
                         color: Colors.brown,
-                        
                       ),
                       margin: EdgeInsets.all(10),
                       width: 125.0,
@@ -75,7 +77,7 @@ class Home extends StatelessWidget {
                           color: Colors.brown),
                       margin: EdgeInsets.all(10),
                       width: 125.0,
-                       child: Column(
+                      child: Column(
                         crossAxisAlignment: CrossAxisAlignment.center,
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
@@ -94,7 +96,7 @@ class Home extends StatelessWidget {
                       ),
                       margin: EdgeInsets.all(10),
                       width: 125.0,
-                       child: Column(
+                      child: Column(
                         crossAxisAlignment: CrossAxisAlignment.center,
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
@@ -113,7 +115,7 @@ class Home extends StatelessWidget {
                       ),
                       margin: EdgeInsets.all(10),
                       width: 125.0,
-                       child: Column(
+                      child: Column(
                         crossAxisAlignment: CrossAxisAlignment.center,
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
@@ -132,7 +134,7 @@ class Home extends StatelessWidget {
                       ),
                       margin: EdgeInsets.all(10),
                       width: 125.0,
-                       child: Column(
+                      child: Column(
                         crossAxisAlignment: CrossAxisAlignment.center,
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
@@ -204,17 +206,20 @@ class Home extends StatelessWidget {
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.spaceAround,
                         children: [
-                         ElevatedButton(
-                        onPressed: () {}, 
-                        child: Text('Order now'),
-                        ),
-                         OutlinedButton(
-                        onPressed: () {}, 
-                        child: Text('Add to cart', style: TextStyle(color: Colors.white),),
-                        ),
-                      ],),
+                          ElevatedButton(
+                            onPressed: () {},
+                            child: Text('Order now'),
+                          ),
+                          OutlinedButton(
+                            onPressed: () {},
+                            child: Text(
+                              'Add to cart',
+                              style: TextStyle(color: Colors.white),
+                            ),
+                          ),
+                        ],
+                      ),
                     ),
-                    
                   ],
                 ),
               ),
@@ -248,69 +253,24 @@ class Home extends StatelessWidget {
                             ),
                           ]),
                     ),
-                      Padding(
+                    Padding(
                       padding: const EdgeInsets.all(4.0),
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.spaceAround,
                         children: [
-                         ElevatedButton(
-                        onPressed: () {}, 
-                        child: Text('Order now'),
-                        ),
-                         OutlinedButton(
-                        onPressed: () {}, 
-                        child: Text('Add to cart', style: TextStyle(color: Colors.white),),
-                        ),
-                      ],),
-                    ),
-                  ],
-                ),
-                
-              ),
-              Card(
-                elevation: 5,
-                shadowColor: Colors.black,
-                margin: EdgeInsets.all(10),
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.all(
-                    Radius.circular(20),
-                  ),
-                ),
-                child: Column(
-                  children: [
-                    Container(
-                      height: 100,
-                      width: 500,
-                      child: Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceAround,
-                          children: [
-                            FlutterLogo(),
-                            Padding(
-                              padding: const EdgeInsets.all(8.0),
-                              child: Text(
-                                'Frappe',
-                              ),
+                          ElevatedButton(
+                            onPressed: () {},
+                            child: Text('Order now'),
+                          ),
+                          OutlinedButton(
+                            onPressed: () {},
+                            child: Text(
+                              'Add to cart',
+                              style: TextStyle(color: Colors.white),
                             ),
-                            Padding(
-                              padding: const EdgeInsets.all(8.0),
-                              child: Text('\$5.0'),
-                            ),
-                          ]),
-                    ),
-                      Padding(
-                      padding: const EdgeInsets.all(4.0),
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceAround,
-                        children: [
-                         ElevatedButton(
-                        onPressed: () {}, 
-                        child: Text('Order now'),
-                        ),
-                         OutlinedButton(
-                        onPressed: () {}, 
-                        child: Text('Add to cart', style: TextStyle(color: Colors.white),),
-                        ),
-                      ],),
+                          ),
+                        ],
+                      ),
                     ),
                   ],
                 ),
@@ -345,20 +305,76 @@ class Home extends StatelessWidget {
                             ),
                           ]),
                     ),
-                      Padding(
+                    Padding(
                       padding: const EdgeInsets.all(4.0),
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.spaceAround,
                         children: [
-                         ElevatedButton(
-                        onPressed: () {}, 
-                        child: Text('Order now'),
-                        ),
-                         OutlinedButton(
-                        onPressed: () {}, 
-                        child: Text('Add to cart', style: TextStyle(color: Colors.white),),
-                        ),
-                      ],),
+                          ElevatedButton(
+                            onPressed: () {},
+                            child: Text('Order now'),
+                          ),
+                          OutlinedButton(
+                            onPressed: () {},
+                            child: Text(
+                              'Add to cart',
+                              style: TextStyle(color: Colors.white),
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+              Card(
+                elevation: 5,
+                shadowColor: Colors.black,
+                margin: EdgeInsets.all(10),
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.all(
+                    Radius.circular(20),
+                  ),
+                ),
+                child: Column(
+                  children: [
+                    Container(
+                      height: 100,
+                      width: 500,
+                      child: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceAround,
+                          children: [
+                            FlutterLogo(),
+                            Padding(
+                              padding: const EdgeInsets.all(8.0),
+                              child: Text(
+                                'Frappe',
+                              ),
+                            ),
+                            Padding(
+                              padding: const EdgeInsets.all(8.0),
+                              child: Text('\$5.0'),
+                            ),
+                          ]),
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.all(4.0),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceAround,
+                        children: [
+                          ElevatedButton(
+                            onPressed: () {},
+                            child: Text('Order now'),
+                          ),
+                          OutlinedButton(
+                            onPressed: () {},
+                            child: Text(
+                              'Add to cart',
+                              style: TextStyle(color: Colors.white),
+                            ),
+                          ),
+                        ],
+                      ),
                     ),
                   ],
                 ),
@@ -393,21 +409,24 @@ class Home extends StatelessWidget {
                             ),
                           ]),
                     ),
-                      Padding(
+                    Padding(
                       padding: const EdgeInsets.all(4.0),
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.spaceAround,
                         children: [
-                         ElevatedButton(
-                        onPressed: () {}, 
-                        child: Text('Order now'),
-                        ),
-                         OutlinedButton(
-                        onPressed: () {},
-                        child: Text('Add to cart', style: TextStyle(color: Colors.white),),
-                        ),
-                      ],
-                    ),
+                          ElevatedButton(
+                            onPressed: () {},
+                            child: Text('Order now'),
+                          ),
+                          OutlinedButton(
+                            onPressed: () {},
+                            child: Text(
+                              'Add to cart',
+                              style: TextStyle(color: Colors.white),
+                            ),
+                          ),
+                        ],
+                      ),
                     ),
                   ],
                 ),

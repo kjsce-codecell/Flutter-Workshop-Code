@@ -4,6 +4,7 @@ class Profile extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      theme: ThemeData(primarySwatch: Colors.brown, backgroundColor: Colors.black, brightness: Brightness.dark),
         debugShowCheckedModeBanner: false,
         home: Scaffold(
           body: SingleChildScrollView(
