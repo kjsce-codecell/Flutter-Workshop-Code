@@ -21,9 +21,54 @@ class MyAppState extends State<MyApp> {
   Widget build(BuildContext context) {
     return MaterialApp(
       home: Scaffold(
+        drawer: Drawer(
+          child: ListView(
+            children: [
+              Container(
+                height: 200,
+                child: DrawerHeader(
+                  child: Column(
+                    children: [
+                      CircleAvatar(
+                        radius: 50,
+                        backgroundColor: Colors.blue,
+                        backgroundImage: null,
+                        ),
+                        SizedBox(height: 20,),
+                        Text('Jay Malave', textAlign: TextAlign.center,),
+                        SizedBox(height: 20,),
+
+                    ],
+                  ),
+                  ),
+              ),
+                ListTile(
+                  title: Text(
+                    'Item 1',
+                    textAlign: TextAlign.center,
+                  ),   
+                ),
+                Divider(color: Colors.blue, height: 1, thickness: 0.25),
+                ListTile(
+                  title: Text(
+                    'Item 2',
+                    textAlign: TextAlign.center,
+                    ),
+                ),
+                Divider(color: Colors.blue,height: 1, thickness: 0.25),
+                ListTile(
+                  title: Text(
+                    'Item 3',
+                    textAlign: TextAlign.center,
+                    ),
+                ),
+
+            ],
+          ),
+        ),
         appBar: AppBar(
+          automaticallyImplyLeading: true,
           title: Text('Flutter WS'),
-          leading: FlutterLogo(),
         ),
         body: Tabs[_currentIndex],
         bottomNavigationBar: BottomNavigationBar(

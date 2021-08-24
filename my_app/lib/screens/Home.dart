@@ -1,3 +1,4 @@
+
 import 'package:flutter/material.dart';
 
 class Home extends StatelessWidget {
@@ -8,21 +9,14 @@ class Home extends StatelessWidget {
       home: Scaffold(
         body: SingleChildScrollView(
           child: Column(
+            crossAxisAlignment: CrossAxisAlignment.center,
+            mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Center(
-                child: Padding(
-                  padding: const EdgeInsets.all(8.0),
-                  child: Text(
-                    'This is Home',
-                    textAlign: TextAlign.center,
-                    style: TextStyle(
-                      fontSize: 20,
-                    ),
-                  ),
+              Text(
+                'Coffee',
                 ),
-              ),
             ],
-          ),
+            ),
         ),
       ),
     );
