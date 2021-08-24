@@ -5,7 +5,7 @@ class Home extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       theme: ThemeData(
-          primarySwatch: Colors.brown,
+          primarySwatch: Colors.amber,
           backgroundColor: Colors.black,
           brightness: Brightness.dark),
       debugShowCheckedModeBanner: false,
@@ -55,7 +55,7 @@ class Home extends StatelessWidget {
                         borderRadius: BorderRadius.all(
                           Radius.circular(10),
                         ),
-                        color: Colors.brown,
+                        color: Colors.amber,
                       ),
                       margin: EdgeInsets.all(10),
                       width: 125.0,
@@ -74,7 +74,8 @@ class Home extends StatelessWidget {
                           borderRadius: BorderRadius.all(
                             Radius.circular(10),
                           ),
-                          color: Colors.brown),
+                          color: Colors.amber,
+                          ),
                       margin: EdgeInsets.all(10),
                       width: 125.0,
                       child: Column(
@@ -92,26 +93,7 @@ class Home extends StatelessWidget {
                         borderRadius: BorderRadius.all(
                           Radius.circular(10),
                         ),
-                        color: Colors.brown,
-                      ),
-                      margin: EdgeInsets.all(10),
-                      width: 125.0,
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.center,
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          FlutterLogo(),
-                          SizedBox(height: 20),
-                          Text('Cappuccino'),
-                        ],
-                      ),
-                    ),
-                    Container(
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadius.all(
-                          Radius.circular(10),
-                        ),
-                        color: Colors.brown,
+                        color: Colors.amber,
                       ),
                       margin: EdgeInsets.all(10),
                       width: 125.0,
@@ -130,7 +112,26 @@ class Home extends StatelessWidget {
                         borderRadius: BorderRadius.all(
                           Radius.circular(10),
                         ),
-                        color: Colors.brown,
+                        color: Colors.amber,
+                      ),
+                      margin: EdgeInsets.all(10),
+                      width: 125.0,
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.center,
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          FlutterLogo(),
+                          SizedBox(height: 20),
+                          Text('Cappuccino'),
+                        ],
+                      ),
+                    ),
+                    Container(
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.all(
+                          Radius.circular(10),
+                        ),
+                        color: Colors.amber,
                       ),
                       margin: EdgeInsets.all(10),
                       width: 125.0,

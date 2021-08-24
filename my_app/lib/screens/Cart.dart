@@ -6,7 +6,7 @@ class Cart extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
-          primarySwatch: Colors.brown,
+          primarySwatch: Colors.amber,
           backgroundColor: Colors.black,
           brightness: Brightness.dark),
       home: Scaffold(

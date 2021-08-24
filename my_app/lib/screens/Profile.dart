@@ -5,7 +5,7 @@ class Profile extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       theme: ThemeData(
-          primarySwatch: Colors.brown,
+          primarySwatch: Colors.amber,
           backgroundColor: Colors.black,
           brightness: Brightness.dark),
       debugShowCheckedModeBanner: false,
@@ -69,22 +69,22 @@ class Profile extends StatelessWidget {
                         mainAxisAlignment: MainAxisAlignment.spaceAround,
                         children: <Widget>[
                           ElevatedButton(
-                            onPressed: () {}, 
-                          child: Text('Edit Profile'),
+                            onPressed: () {},
+                            child: Text('Edit Profile'),
                           ),
-                           ElevatedButton(
-                            onPressed: () {}, 
-                          child: Text('Order History'),
+                          ElevatedButton(
+                            onPressed: () {},
+                            child: Text('Order History'),
                           ),
                         ],
                       ),
                       Padding(
                         padding: EdgeInsets.only(top: 40),
                       ),
-                       ElevatedButton(
-                            onPressed: () {}, 
-                          child: Text('Log Out'),
-                          ),
+                      ElevatedButton(
+                        onPressed: () {},
+                        child: Text('Log Out'),
+                      ),
                     ],
                   ),
                 ),
