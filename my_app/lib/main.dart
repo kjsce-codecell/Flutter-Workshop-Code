@@ -20,6 +20,7 @@ class MyAppState extends State<MyApp> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      theme: ThemeData(primarySwatch: Colors.brown, brightness: Brightness.dark),
       home: Scaffold(
         drawer: Drawer(
           child: ListView(
@@ -27,19 +28,22 @@ class MyAppState extends State<MyApp> {
               Container(
                 height: 200,
                 child: DrawerHeader(
+                  decoration: BoxDecoration(
+                    // color: Colors.blueAccent,
+                    borderRadius: BorderRadius.only(bottomRight: Radius.circular(5),),
+                  ),
                   child: Column(
                     children: [
                       CircleAvatar(
                         radius: 50,
-                        backgroundColor: Colors.blue,
+                        backgroundColor: Colors.white,
                         backgroundImage: null,
                         ),
                         SizedBox(height: 20,),
                         Text('Jay Malave', textAlign: TextAlign.center,),
-                        SizedBox(height: 20,),
-
                     ],
                   ),
+                  
                   ),
               ),
                 ListTile(
@@ -68,12 +72,12 @@ class MyAppState extends State<MyApp> {
         ),
         appBar: AppBar(
           automaticallyImplyLeading: true,
-          title: Text('Flutter WS'),
+          title: Text('Codecell Coffee Shop'),
         ),
         body: Tabs[_currentIndex],
         bottomNavigationBar: BottomNavigationBar(
           currentIndex: _currentIndex,
-          selectedItemColor: Colors.blue,
+          selectedItemColor: Colors.brown,
           type: BottomNavigationBarType.fixed,
           items: const <BottomNavigationBarItem>[
             BottomNavigationBarItem(
@@ -81,7 +85,7 @@ class MyAppState extends State<MyApp> {
               label: 'Home',
             ),
             BottomNavigationBarItem(
-              icon: Icon(Icons.add_chart),
+              icon: Icon(Icons.list_alt),
               label: 'Cart',
             ),
             BottomNavigationBarItem(
