@@ -37,7 +37,8 @@ class MyAppState extends State<MyApp> {
                       CircleAvatar(
                         radius: 50,
                         backgroundColor: Colors.white,
-                        backgroundImage: null,
+                        backgroundImage: NetworkImage(
+                              'https://t3.ftcdn.net/jpg/03/46/83/96/360_F_346839683_6nAPzbhpSkIpb8pmAwufkC7c5eD7wYws.jpg'),
                         ),
                         SizedBox(height: 20,),
                         Text('Jay Malave', textAlign: TextAlign.center,),
