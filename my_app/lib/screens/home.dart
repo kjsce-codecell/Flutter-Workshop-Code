@@ -171,7 +171,6 @@ class _HomeState extends State<Home> {
                             ? allItems
                                 .removeWhere((key, value) => key != valuee)
                             : null; //remove searched value and hit enter to get original list back.
-
                     setState(() {});
                   },
                   style: TextStyle(

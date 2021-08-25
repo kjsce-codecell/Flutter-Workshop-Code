@@ -3,6 +3,7 @@ import 'package:my_app/screens/cart.dart';
 import 'package:my_app/screens/home.dart';
 import 'package:my_app/screens/profile.dart';
 
+
 void main() {
   runApp(MyApp());
 }
@@ -15,10 +16,10 @@ class MyApp extends StatefulWidget {
 
 class MyAppState extends State<MyApp> {
   int _currentIndex = 0;
+  final tabs = [Home(), Cart(), Profile()];
 
   @override
   Widget build(BuildContext context) {
-    final tabs = [Home(), Cart(), Profile()];
     return MaterialApp(
       theme:
           ThemeData(primarySwatch: Colors.amber, brightness: Brightness.dark),
