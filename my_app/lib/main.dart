@@ -8,7 +8,7 @@ void main() {
 }
 
 class MyApp extends StatefulWidget {
-  static List<Map<String, String>> cartItems = [];
+  static Map<String, String> cartItems = {};
   @override
   MyAppState createState() => MyAppState();
 }

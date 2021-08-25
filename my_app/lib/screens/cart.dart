@@ -2,6 +2,7 @@ import 'package:collection/src/iterable_extensions.dart';
 import 'package:flutter/material.dart';
 import 'package:my_app/main.dart';
 import 'package:collection/collection.dart';
+import 'package:google_sign_in/google_sign_in.dart';
 
 class Cart extends StatefulWidget {
   const Cart({Key? key}) : super(key: key);
@@ -14,10 +15,22 @@ class _CartState extends State<Cart> {
   String total = '0';
   void getTotalCost() {
     List<int> costsList = [];
-    costsList.addAll(MyApp.cartItems.map((e) => int.parse(e.values.first)));
+    costsList.addAll(MyApp.cartItems.values.map((e) => int.parse(e)));
     setState(() {
       total = costsList.sum.toString();
     });
+  }
+
+  GoogleSignIn _googleSignIn = GoogleSignIn(
+    scopes: ['email'],
+  );
+
+  Future<void> _handleSignIn() async {
+    try {
+      await _googleSignIn.signIn();
+    } catch (error) {
+      print(error);
+    }
   }
 
   @override
@@ -44,8 +57,8 @@ class _CartState extends State<Cart> {
             itemCount: MyApp.cartItems.length,
             itemBuilder: (context, index) {
               return CartItem(
-                cost: MyApp.cartItems[index].values.first,
-                order: MyApp.cartItems[index].keys.first,
+                cost: MyApp.cartItems.values.elementAt(index),
+                order: MyApp.cartItems.keys.elementAt(index),
               );
             },
           ),
@@ -73,7 +86,7 @@ class _CartState extends State<Cart> {
           Padding(
             padding: const EdgeInsets.all(8.0),
             child: OutlinedButton(
-              onPressed: () {},
+              onPressed: _handleSignIn,
               child: Container(
                 width: 500,
                 margin: EdgeInsets.all(10),

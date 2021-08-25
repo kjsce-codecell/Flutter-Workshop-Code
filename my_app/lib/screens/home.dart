@@ -1,7 +1,22 @@
 import 'package:flutter/material.dart';
 import 'package:my_app/main.dart';
 
-class Home extends StatelessWidget {
+class Home extends StatefulWidget {
+  @override
+  _HomeState createState() => _HomeState();
+}
+
+class _HomeState extends State<Home> {
+  static const Map<String, String> allItemsMap = {
+    'test': '1',
+    'test2': '2',
+    'test3': '3',
+    'test4': '4',
+    'test5': '5',
+    'test6': '6',
+    'test7': '7'
+  };
+  Map<String, String> allItems = Map.from(allItemsMap);
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -149,6 +164,16 @@ class Home extends StatelessWidget {
               child: Padding(
                 padding: const EdgeInsets.all(4.0),
                 child: TextField(
+                  onSubmitted: (valuee) {
+                    valuee.isEmpty
+                        ? allItems = allItemsMap
+                        : allItems.containsKey(valuee)
+                            ? allItems
+                                .removeWhere((key, value) => key != valuee)
+                            : null; //remove searched value and hit enter to get original list back.
+
+                    setState(() {});
+                  },
                   style: TextStyle(
                     fontSize: 15.0,
                     color: Colors.black,
@@ -165,10 +190,15 @@ class Home extends StatelessWidget {
                 ),
               ),
             ),
-            HomeCard(order: 'test', cost: '1'),
-            HomeCard(order: 'test2', cost: '2'),
-            HomeCard(order: 'test3', cost: '3'),
-            HomeCard(order: 'test4', cost: '4'),
+            ListView.builder(
+                shrinkWrap: true,
+                physics: NeverScrollableScrollPhysics(),
+                itemCount: allItems.length,
+                itemBuilder: (context, index) {
+                  return HomeCard(
+                      cost: allItems.values.elementAt(index),
+                      order: allItems.keys.elementAt(index));
+                })
           ],
         ),
       ),
@@ -225,7 +255,7 @@ class HomeCard extends StatelessWidget {
                 ),
                 OutlinedButton(
                   onPressed: () {
-                    MyApp.cartItems.add({order: cost});
+                    MyApp.cartItems[order] = cost;
                   },
                   child: Text(
                     'Add to cart',
