@@ -55,45 +55,7 @@ class Home extends StatelessWidget {
                         borderRadius: BorderRadius.all(
                           Radius.circular(10),
                         ),
-                        color: Colors.amber,
-                      ),
-                      margin: EdgeInsets.all(10),
-                      width: 125.0,
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.center,
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          FlutterLogo(),
-                          SizedBox(height: 20),
-                          Text('Cappuccino'),
-                        ],
-                      ),
-                    ),
-                    Container(
-                      decoration: BoxDecoration(
-                          borderRadius: BorderRadius.all(
-                            Radius.circular(10),
-                          ),
-                          color: Colors.amber,
-                          ),
-                      margin: EdgeInsets.all(10),
-                      width: 125.0,
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.center,
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          FlutterLogo(),
-                          SizedBox(height: 20),
-                          Text('Cappuccino'),
-                        ],
-                      ),
-                    ),
-                    Container(
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadius.all(
-                          Radius.circular(10),
-                        ),
-                        color: Colors.amber,
+                        color: Colors.amber[700],
                       ),
                       margin: EdgeInsets.all(10),
                       width: 125.0,
@@ -112,7 +74,7 @@ class Home extends StatelessWidget {
                         borderRadius: BorderRadius.all(
                           Radius.circular(10),
                         ),
-                        color: Colors.amber,
+                        color: Colors.amber[700],
                       ),
                       margin: EdgeInsets.all(10),
                       width: 125.0,
@@ -131,7 +93,45 @@ class Home extends StatelessWidget {
                         borderRadius: BorderRadius.all(
                           Radius.circular(10),
                         ),
-                        color: Colors.amber,
+                        color: Colors.amber[700],
+                      ),
+                      margin: EdgeInsets.all(10),
+                      width: 125.0,
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.center,
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          FlutterLogo(),
+                          SizedBox(height: 20),
+                          Text('Cappuccino'),
+                        ],
+                      ),
+                    ),
+                    Container(
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.all(
+                          Radius.circular(10),
+                        ),
+                        color: Colors.amber[700],
+                      ),
+                      margin: EdgeInsets.all(10),
+                      width: 125.0,
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.center,
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          FlutterLogo(),
+                          SizedBox(height: 20),
+                          Text('Cappuccino'),
+                        ],
+                      ),
+                    ),
+                    Container(
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.all(
+                          Radius.circular(10),
+                        ),
+                        color: Colors.amber[700],
                       ),
                       margin: EdgeInsets.all(10),
                       width: 125.0,
