@@ -57,106 +57,14 @@ class _HomeState extends State<Home> {
             Container(
               margin: EdgeInsets.symmetric(vertical: 20.0),
               height: 125.0,
-              child: ListView(
-                scrollDirection: Axis.horizontal,
-                children: <Widget>[
-                  Container(
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.all(
-                        Radius.circular(10),
-                      ),
-                      color: Colors.amber[700],
-                    ),
-                    margin: EdgeInsets.all(10),
-                    width: 125.0,
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.center,
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        FlutterLogo(),
-                        SizedBox(height: 20),
-                        Text('Cappuccino'),
-                      ],
-                    ),
-                  ),
-                  Container(
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.all(
-                        Radius.circular(10),
-                      ),
-                      color: Colors.amber[700],
-                    ),
-                    margin: EdgeInsets.all(10),
-                    width: 125.0,
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.center,
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        FlutterLogo(),
-                        SizedBox(height: 20),
-                        Text('Cappuccino'),
-                      ],
-                    ),
-                  ),
-                  Container(
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.all(
-                        Radius.circular(10),
-                      ),
-                      color: Colors.amber[700],
-                    ),
-                    margin: EdgeInsets.all(10),
-                    width: 125.0,
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.center,
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        FlutterLogo(),
-                        SizedBox(height: 20),
-                        Text('Cappuccino'),
-                      ],
-                    ),
-                  ),
-                  Container(
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.all(
-                        Radius.circular(10),
-                      ),
-                      color: Colors.amber[700],
-                    ),
-                    margin: EdgeInsets.all(10),
-                    width: 125.0,
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.center,
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        FlutterLogo(),
-                        SizedBox(height: 20),
-                        Text('Cappuccino'),
-                      ],
-                    ),
-                  ),
-                  Container(
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.all(
-                        Radius.circular(10),
-                      ),
-                      color: Colors.amber[700],
-                    ),
-                    margin: EdgeInsets.all(10),
-                    width: 125.0,
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.center,
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        FlutterLogo(),
-                        SizedBox(height: 20),
-                        Text('Cappuccino'),
-                      ],
-                    ),
-                  ),
-                ],
-              ),
+              child: ListView.builder(
+                  scrollDirection: Axis.horizontal,
+                  itemCount: allItems.length,
+                  itemBuilder: (context, index) {
+                    return RecentCard(
+                        cost: allItems.values.elementAt(index),
+                        order: allItems.keys.elementAt(index));
+                  }),
             ),
             SizedBox(height: 5),
             Container(
@@ -197,7 +105,7 @@ class _HomeState extends State<Home> {
                   return HomeCard(
                       cost: allItems.values.elementAt(index),
                       order: allItems.keys.elementAt(index));
-                })
+                }),
           ],
         ),
       ),
@@ -260,6 +168,51 @@ class HomeCard extends StatelessWidget {
                     'Add to cart',
                     style: TextStyle(color: Colors.white),
                   ),
+                ),
+              ],
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+}
+
+class RecentCard extends StatelessWidget {
+  final String order;
+  final String cost;
+  const RecentCard({Key? key, required this.order, required this.cost})
+      : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Card(
+      elevation: 5,
+      shadowColor: Colors.black,
+      margin: EdgeInsets.all(10),
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.all(
+          Radius.circular(20),
+        ),
+      ),
+      child: Column(
+        children: [
+          Container(
+            height: 100,
+            width: 200,
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.spaceAround,
+              children: [
+                FlutterLogo(),
+                Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: Text(
+                    order,
+                  ),
+                ),
+                Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: Text('\$$cost'),
                 ),
               ],
             ),
