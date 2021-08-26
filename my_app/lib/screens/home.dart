@@ -138,7 +138,10 @@ class HomeCard extends StatelessWidget {
             child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceAround,
                 children: [
-                  FlutterLogo(),
+                  Image(
+                    image: AssetImage('assets/images/frappe.png'),
+                    height: 75,
+                  ),
                   Padding(
                     padding: const EdgeInsets.all(8.0),
                     child: Text(
@@ -203,15 +206,18 @@ class RecentCard extends StatelessWidget {
             child: Column(
               mainAxisAlignment: MainAxisAlignment.spaceAround,
               children: [
-                FlutterLogo(),
+                Image(
+                    image: AssetImage('assets/images/frappe.png'),
+                    height: 50,
+                  ),
                 Padding(
-                  padding: const EdgeInsets.all(8.0),
+                  padding: const EdgeInsets.all(4.0),
                   child: Text(
                     order,
                   ),
                 ),
                 Padding(
-                  padding: const EdgeInsets.all(8.0),
+                  padding: const EdgeInsets.all(4.0),
                   child: Text('\$$cost'),
                 ),
               ],
