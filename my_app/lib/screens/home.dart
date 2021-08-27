@@ -8,13 +8,11 @@ class Home extends StatefulWidget {
 
 class _HomeState extends State<Home> {
   static const Map<String, String> allItemsMap = {
-    'test': '1',
-    'test2': '2',
-    'test3': '3',
-    'test4': '4',
-    'test5': '5',
-    'test6': '6',
-    'test7': '7'
+    'frappe': '1',
+    'irish': '3',
+    'mocha': '5',
+    'affogato': '6',
+    'espresso': '7',
   };
   Map<String, String> allItems = Map.from(allItemsMap);
   @override
@@ -83,7 +81,7 @@ class _HomeState extends State<Home> {
                   },
                   style: TextStyle(
                     fontSize: 15.0,
-                    color: Colors.black,
+                    color: Colors.white,
                   ),
                   decoration: InputDecoration(
                     contentPadding: EdgeInsets.fromLTRB(20.0, 15.0, 20.0, 15.0),
@@ -139,7 +137,7 @@ class HomeCard extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.spaceAround,
                 children: [
                   Image(
-                    image: AssetImage('assets/images/frappe.png'),
+                    image: AssetImage('assets/images/$order.png'),
                     height: 75,
                   ),
                   Padding(
@@ -207,7 +205,7 @@ class RecentCard extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.spaceAround,
               children: [
                 Image(
-                    image: AssetImage('assets/images/frappe.png'),
+                    image: AssetImage('assets/images/$order.png'),
                     height: 50,
                   ),
                 Padding(

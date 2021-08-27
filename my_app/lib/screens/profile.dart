@@ -43,7 +43,7 @@ class Profile extends StatelessWidget {
                             fontSize: 20, fontWeight: FontWeight.bold),
                       ),
                       title: Text(
-                        "221B, Baker Street, London, United Kingdom",
+                        "Dummy Address",
                         style: TextStyle(fontSize: 15),
                       ),
                     ),
@@ -54,7 +54,7 @@ class Profile extends StatelessWidget {
                             fontSize: 20, fontWeight: FontWeight.bold),
                       ),
                       title: Text(
-                        "9730535624",
+                        "Dummy Phone",
                         style: TextStyle(fontSize: 15),
                       ),
                     ),
