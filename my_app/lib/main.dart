@@ -3,7 +3,6 @@ import 'package:my_app/screens/cart.dart';
 import 'package:my_app/screens/home.dart';
 import 'package:my_app/screens/profile.dart';
 
-
 void main() {
   runApp(MyApp());
 }

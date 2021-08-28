@@ -1,4 +1,3 @@
-import 'package:collection/src/iterable_extensions.dart';
 import 'package:flutter/material.dart';
 import 'package:my_app/main.dart';
 import 'package:collection/collection.dart';
@@ -36,72 +35,70 @@ class _CartState extends State<Cart> {
   @override
   Widget build(BuildContext context) {
     getTotalCost();
-    return Scaffold(
-      body: Column(
-        children: [
-          Center(
-            child: Padding(
-              padding: const EdgeInsets.all(16.0),
+    return Column(
+      children: [
+        Center(
+          child: Padding(
+            padding: const EdgeInsets.all(16.0),
+            child: Text(
+              'Your Cart',
+              textAlign: TextAlign.center,
+              style: TextStyle(
+                fontSize: 25,
+                fontWeight: FontWeight.bold,
+              ),
+            ),
+          ),
+        ),
+        ListView.builder(
+          shrinkWrap: true,
+          itemCount: MyApp.cartItems.length,
+          itemBuilder: (context, index) {
+            return CartItem(
+              cost: MyApp.cartItems.values.elementAt(index),
+              order: MyApp.cartItems.keys.elementAt(index),
+            );
+          },
+        ),
+        if (MyApp.cartItems.isNotEmpty)
+          Card(
+            color: Colors.transparent,
+            child: Container(
+              height: 70,
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceAround,
+                children: [
+                  Text(
+                    'TOTAL',
+                    style: TextStyle(fontWeight: FontWeight.bold),
+                  ),
+                  Text(
+                    '\$$total',
+                    style: TextStyle(fontWeight: FontWeight.bold),
+                  ),
+                ],
+              ),
+            ),
+          ),
+        SizedBox(height: 50),
+        Padding(
+          padding: const EdgeInsets.all(8.0),
+          child: OutlinedButton(
+            onPressed: _handleSignIn,
+            child: Container(
+              width: 500,
+              margin: EdgeInsets.all(10),
               child: Text(
-                'Your Cart',
+                'Proceed to Checkout',
                 textAlign: TextAlign.center,
                 style: TextStyle(
-                  fontSize: 25,
-                  fontWeight: FontWeight.bold,
+                  color: Colors.white,
                 ),
               ),
             ),
           ),
-          ListView.builder(
-            shrinkWrap: true,
-            itemCount: MyApp.cartItems.length,
-            itemBuilder: (context, index) {
-              return CartItem(
-                cost: MyApp.cartItems.values.elementAt(index),
-                order: MyApp.cartItems.keys.elementAt(index),
-              );
-            },
-          ),
-          if (MyApp.cartItems.isNotEmpty)
-            Card(
-              color: Colors.transparent,
-              child: Container(
-                height: 70,
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceAround,
-                  children: [
-                    Text(
-                      'TOTAL',
-                      style: TextStyle(fontWeight: FontWeight.bold),
-                    ),
-                    Text(
-                      '\$$total',
-                      style: TextStyle(fontWeight: FontWeight.bold),
-                    ),
-                  ],
-                ),
-              ),
-            ),
-          SizedBox(height: 50),
-          Padding(
-            padding: const EdgeInsets.all(8.0),
-            child: OutlinedButton(
-              onPressed: _handleSignIn,
-              child: Container(
-                width: 500,
-                margin: EdgeInsets.all(10),
-                child: Text(
-                  'Proceed to Checkout',
-                  textAlign: TextAlign.center,
-                  style: TextStyle(
-                    color: Colors.white,
-                  ),
-                ),
-              ),
-            ),
-          ),
-        ],
-      ),
+        ),
+      ],
     );
   }
 }

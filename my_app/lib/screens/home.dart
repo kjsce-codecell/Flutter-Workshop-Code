@@ -17,95 +17,93 @@ class _HomeState extends State<Home> {
   Map<String, String> allItems = Map.from(allItemsMap);
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: SingleChildScrollView(
-        child: Column(
-          //  crossAxisAlignment: CrossAxisAlignment.center,
-          // mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Align(
-              alignment: Alignment.topLeft,
-              child: Padding(
-                padding: const EdgeInsets.only(left: 10, bottom: 5, top: 25),
-                child: Text(
-                  'Good morning, Jay',
-                  style: TextStyle(
-                    fontWeight: FontWeight.bold,
-                    fontSize: 25,
-                  ),
+    return SingleChildScrollView(
+      child: Column(
+        //  crossAxisAlignment: CrossAxisAlignment.center,
+        // mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          Align(
+            alignment: Alignment.topLeft,
+            child: Padding(
+              padding: const EdgeInsets.only(left: 10, bottom: 5, top: 25),
+              child: Text(
+                'Good morning, Jay',
+                style: TextStyle(
+                  fontWeight: FontWeight.bold,
+                  fontSize: 25,
                 ),
               ),
             ),
-            SizedBox(
-              height: 15,
-            ),
-            Align(
-              alignment: Alignment.topLeft,
-              child: Padding(
-                padding: const EdgeInsets.only(left: 10),
-                child: Text(
-                  'Your recent orders',
-                  style: TextStyle(
-                    fontSize: 20,
-                    fontWeight: FontWeight.w700,
-                  ),
+          ),
+          SizedBox(
+            height: 15,
+          ),
+          Align(
+            alignment: Alignment.topLeft,
+            child: Padding(
+              padding: const EdgeInsets.only(left: 10),
+              child: Text(
+                'Your recent orders',
+                style: TextStyle(
+                  fontSize: 20,
+                  fontWeight: FontWeight.w700,
                 ),
               ),
             ),
-            Container(
-              margin: EdgeInsets.symmetric(vertical: 20.0),
-              height: 125.0,
-              child: ListView.builder(
-                  scrollDirection: Axis.horizontal,
-                  itemCount: allItems.length,
-                  itemBuilder: (context, index) {
-                    return RecentCard(
-                        cost: allItems.values.elementAt(index),
-                        order: allItems.keys.elementAt(index));
-                  }),
-            ),
-            SizedBox(height: 5),
-            Container(
-              margin: EdgeInsets.all(10),
-              child: Padding(
-                padding: const EdgeInsets.all(4.0),
-                child: TextField(
-                  onSubmitted: (valuee) {
-                    valuee.isEmpty
-                        ? allItems = allItemsMap
-                        : allItems.containsKey(valuee)
-                            ? allItems
-                                .removeWhere((key, value) => key != valuee)
-                            : null; //remove searched value and hit enter to get original list back.
-                    setState(() {});
-                  },
-                  style: TextStyle(
-                    fontSize: 15.0,
-                    color: Colors.white,
-                  ),
-                  decoration: InputDecoration(
-                    contentPadding: EdgeInsets.fromLTRB(20.0, 15.0, 20.0, 15.0),
-                    prefixIcon: Icon(Icons.search),
-                    hintText: "Search a coffee...",
-                    border: OutlineInputBorder(
-                      borderSide: BorderSide(color: Colors.white70, width: 1.0),
-                      borderRadius: BorderRadius.circular(15.0),
-                    ),
-                  ),
-                ),
-              ),
-            ),
-            ListView.builder(
-                shrinkWrap: true,
-                physics: NeverScrollableScrollPhysics(),
+          ),
+          Container(
+            margin: EdgeInsets.symmetric(vertical: 20.0),
+            height: 125.0,
+            child: ListView.builder(
+                scrollDirection: Axis.horizontal,
                 itemCount: allItems.length,
                 itemBuilder: (context, index) {
-                  return HomeCard(
+                  return RecentCard(
                       cost: allItems.values.elementAt(index),
                       order: allItems.keys.elementAt(index));
                 }),
-          ],
-        ),
+          ),
+          SizedBox(height: 5),
+          Container(
+            margin: EdgeInsets.all(10),
+            child: Padding(
+              padding: const EdgeInsets.all(4.0),
+              child: TextField(
+                onSubmitted: (valuee) {
+                  valuee.isEmpty
+                      ? allItems = allItemsMap
+                      : allItems.containsKey(valuee)
+                          ? allItems.removeWhere((key, value) => key != valuee)
+                          // ignore: unnecessary_statements
+                          : null; //remove searched value and hit enter to get original list back.
+                  setState(() {});
+                },
+                style: TextStyle(
+                  fontSize: 15.0,
+                  color: Colors.white,
+                ),
+                decoration: InputDecoration(
+                  contentPadding: EdgeInsets.fromLTRB(20.0, 15.0, 20.0, 15.0),
+                  prefixIcon: Icon(Icons.search),
+                  hintText: "Search a coffee...",
+                  border: OutlineInputBorder(
+                    borderSide: BorderSide(color: Colors.white70, width: 1.0),
+                    borderRadius: BorderRadius.circular(15.0),
+                  ),
+                ),
+              ),
+            ),
+          ),
+          ListView.builder(
+              shrinkWrap: true,
+              physics: NeverScrollableScrollPhysics(),
+              itemCount: allItems.length,
+              itemBuilder: (context, index) {
+                return HomeCard(
+                    cost: allItems.values.elementAt(index),
+                    order: allItems.keys.elementAt(index));
+              }),
+        ],
       ),
     );
   }
@@ -205,9 +203,9 @@ class RecentCard extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.spaceAround,
               children: [
                 Image(
-                    image: AssetImage('assets/images/$order.png'),
-                    height: 50,
-                  ),
+                  image: AssetImage('assets/images/$order.png'),
+                  height: 50,
+                ),
                 Padding(
                   padding: const EdgeInsets.all(4.0),
                   child: Text(
