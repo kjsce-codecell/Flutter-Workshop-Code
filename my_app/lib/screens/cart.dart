@@ -1,7 +1,8 @@
+import 'package:confetti/confetti.dart';
 import 'package:flutter/material.dart';
 import 'package:my_app/main.dart';
 import 'package:collection/collection.dart';
-import 'package:google_sign_in/google_sign_in.dart';
+import 'dart:math';
 
 class Cart extends StatefulWidget {
   const Cart({Key? key}) : super(key: key);
@@ -20,16 +21,13 @@ class _CartState extends State<Cart> {
     });
   }
 
-  GoogleSignIn _googleSignIn = GoogleSignIn(
-    scopes: ['email'],
-  );
+  late ConfettiController _controllerTopCenter;
 
-  Future<void> _handleSignIn() async {
-    try {
-      await _googleSignIn.signIn();
-    } catch (error) {
-      print(error);
-    }
+  @override
+  void initState() {
+       _controllerTopCenter =
+        ConfettiController(duration: const Duration(seconds: 10));
+    super.initState();
   }
 
   @override
@@ -81,22 +79,25 @@ class _CartState extends State<Cart> {
             ),
           ),
         SizedBox(height: 50),
-        Padding(
-          padding: const EdgeInsets.all(8.0),
-          child: OutlinedButton(
-            onPressed: _handleSignIn,
-            child: Container(
-              width: 500,
-              margin: EdgeInsets.all(10),
-              child: Text(
-                'Proceed to Checkout',
-                textAlign: TextAlign.center,
-                style: TextStyle(
-                  color: Colors.white,
-                ),
-              ),
-            ),
+         Align(
+          alignment: Alignment.topCenter,
+          child: ConfettiWidget(
+            confettiController: _controllerTopCenter,
+            blastDirection: pi / 2,
+            maxBlastForce: 5, // set a lower max blast force
+            minBlastForce: 2, // set a lower min blast force
+            emissionFrequency: 0.05,
+            numberOfParticles: 50, // a lot of particles at once
+            gravity: 1,
           ),
+        ),
+        Align(
+          alignment: Alignment.topCenter,
+          child: MaterialButton(
+              onPressed: () {
+                _controllerTopCenter.play();
+              },
+              child: _display('Proceed to checkout')),
         ),
       ],
     );
@@ -124,4 +125,11 @@ class CartItem extends StatelessWidget {
       ),
     );
   }
+}
+
+Text _display(String text) {
+  return Text(
+    text,
+    style: const TextStyle(color: Colors.white, fontSize: 20),
+  );
 }

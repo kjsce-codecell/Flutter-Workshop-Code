@@ -56,11 +56,11 @@ class _HomeState extends State<Home> {
             height: 125.0,
             child: ListView.builder(
                 scrollDirection: Axis.horizontal,
-                itemCount: allItems.length,
+                itemCount: allItemsMap.length,
                 itemBuilder: (context, index) {
                   return RecentCard(
-                      cost: allItems.values.elementAt(index),
-                      order: allItems.keys.elementAt(index));
+                      cost: allItemsMap.values.elementAt(index),
+                      order: allItemsMap.keys.elementAt(index));
                 }),
           ),
           SizedBox(height: 5),
@@ -69,13 +69,15 @@ class _HomeState extends State<Home> {
             child: Padding(
               padding: const EdgeInsets.all(4.0),
               child: TextField(
-                onSubmitted: (valuee) {
-                  valuee.isEmpty
+                onSubmitted: (textFieldValue) {
+                  textFieldValue.isEmpty
                       ? allItems = allItemsMap
-                      : allItems.containsKey(valuee)
-                          ? allItems.removeWhere((key, value) => key != valuee)
+                      : allItems.containsKey(textFieldValue)
+                          ? allItems.removeWhere(
+                              (key, value) => key != textFieldValue)
                           // ignore: unnecessary_statements
-                          : null; //remove searched value and hit enter to get original list back.
+                          : allItems =
+                              {}; //remove searched value and hit enter to get original list back.
                   setState(() {});
                 },
                 style: TextStyle(

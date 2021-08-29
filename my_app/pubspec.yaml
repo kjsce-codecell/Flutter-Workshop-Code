@@ -9,7 +9,7 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-  google_sign_in: ^5.0.7
+  confetti: ^0.6.0-nullsafety
   cupertino_icons: ^1.0.2
 
 dev_dependencies:
